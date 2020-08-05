@@ -18,6 +18,7 @@ import top.theillusivec4.curios.api.capability.ICurioItemHandler;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.ISocketable;
 import vazkii.psi.api.cad.ISocketableController;
+import vazkii.psi.common.core.PsiCreativeTab;
 import vazkii.psi.common.core.handler.PsiSoundHandler;
 
 import javax.annotation.Nonnull;
@@ -28,7 +29,7 @@ public class ItemBaubleController extends Item implements ISocketableController 
     private static final String TAG_SELECTED_CONTROL_SLOT = "selectedControlSlot";
 
     public ItemBaubleController() {
-        super(new Item.Properties().maxStackSize(1).rarity(Rarity.RARE).group(PsiToolsCreativeTab.INSTANCE));
+        super(new Item.Properties().maxStackSize(1).rarity(Rarity.RARE).group(PsiCreativeTab.INSTANCE));
     }
 
     @Nonnull

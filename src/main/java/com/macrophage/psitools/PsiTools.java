@@ -1,6 +1,5 @@
 package com.macrophage.psitools;
 
-import com.macrophage.psitools.common.core.PsiToolsCreativeTab;
 import com.macrophage.psitools.common.init.ModItems;
 import com.macrophage.psitools.common.item.curio.ItemPsiCurio;
 import com.macrophage.psitools.common.spell.base.PsiToolsSpellPieces;

@@ -17,6 +17,7 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import top.theillusivec4.curios.api.capability.ICurio;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.ISocketable;
+import vazkii.psi.common.core.PsiCreativeTab;
 import vazkii.psi.common.core.handler.PlayerDataHandler;
 import vazkii.psi.common.item.tool.IPsimetalTool;
 import vazkii.psi.common.item.tool.ToolSocketable;
@@ -30,12 +31,12 @@ public class ItemPsiCurio extends Item implements ICurio, IPsimetalTool, IPsiCus
 
     public ItemPsiCurio()
     {
-        super(new Item.Properties().group(PsiToolsCreativeTab.INSTANCE));
+        super(new Item.Properties().group(PsiCreativeTab.INSTANCE));
         this.stack = new ItemStack(this);
     }
 
     public ItemPsiCurio(ItemStack stack) {
-        super(new Item.Properties().group(PsiToolsCreativeTab.INSTANCE));
+        super(new Item.Properties().group(PsiCreativeTab.INSTANCE));
         this.stack = stack;
     }
 
@@ -68,7 +69,7 @@ public class ItemPsiCurio extends Item implements ICurio, IPsimetalTool, IPsiCus
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
 
-        double eff = Math.floor(1 - costModifier()) * 100F;
+        double eff = 1 - costModifier() * 100F;
 
         tooltip.add(new StringTextComponent("Efficiency: " + String.valueOf(eff) + "%"));
     }
