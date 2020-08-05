@@ -1,7 +1,6 @@
 package com.macrophage.psitools.common.item.curio;
 
 import com.macrophage.psitools.PsiTools;
-import com.macrophage.psitools.common.core.PsiToolsCreativeTab;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;

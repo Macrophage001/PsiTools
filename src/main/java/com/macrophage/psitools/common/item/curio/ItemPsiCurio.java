@@ -1,7 +1,6 @@
 package com.macrophage.psitools.common.item.curio;
 
 import com.macrophage.psitools.PsiTools;
-import com.macrophage.psitools.common.core.PsiToolsCreativeTab;
 import com.macrophage.psitools.common.helper.IPsiCustomCast;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
@@ -69,7 +68,7 @@ public class ItemPsiCurio extends Item implements ICurio, IPsimetalTool, IPsiCus
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
 
-        double eff = 1 - costModifier() * 100F;
+        double eff = Math.floor(((1 - costModifier()) * 100F));
 
         tooltip.add(new StringTextComponent("Efficiency: " + String.valueOf(eff) + "%"));
     }

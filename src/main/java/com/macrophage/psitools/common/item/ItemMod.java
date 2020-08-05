@@ -1,6 +1,5 @@
 package com.macrophage.psitools.common.item;
 
-import com.macrophage.psitools.common.core.PsiToolsCreativeTab;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
 import vazkii.psi.common.core.PsiCreativeTab;
