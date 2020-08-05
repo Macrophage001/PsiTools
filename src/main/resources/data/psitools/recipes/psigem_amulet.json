@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " s ",
+    "s s",
+    " p "
+  ],
+  "key": {
+    "p": {
+      "type": "forge:ore_dict",
+      "ore": "gemPsi"
+    },
+    "s": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "psitools:psigem_amulet"
+  }
+}

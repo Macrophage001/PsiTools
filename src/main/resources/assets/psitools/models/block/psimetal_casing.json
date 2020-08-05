@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "psitools:blocks/psimetal_casing",
+    "front": "psitools:blocks/psimetal_casing",
+    "side": "psitools:blocks/psimetal_casing"
+  }
+}

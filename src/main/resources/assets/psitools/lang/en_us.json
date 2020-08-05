@@ -1,0 +1,43 @@
+{
+  "itemGroup.psitools": "PsiTools",
+
+  "item.psitools.bauble_controller": "Bauble Controller",
+  "item.psitools.psigem_amulet": "Psigem Amulet",
+  "item.psitools.psigem_belt": "Psigem Belt",
+  "item.psitools.psigem_ring": "Psigem Ring",
+  "item.psitools.psimetal_plate": "Psimetal Plate",
+  "item.psitools.psi_core": "Psi Core",
+
+  "psitools.spellpiece.operator_compare_to_block": "Operator: Compare To Block",
+  "psitools.spellpiece.operator_compare_to_block.desc": "Compares block at target position to block in inventory.",
+  "psitools.spellpiece.operator_equal_to": "Operator: Equals",
+  "psitools.spellpiece.operator_equal_to.desc": "Compares two numbers. Returns 0 if both are equal, 1 otherwise.",
+  "psitools.spellpiece.operator_less_than": "Operator: Less Than",
+  "psitools.spellpiece.operator_less_than.desc": "A < B. 0 if true, 1 otherwise.",
+  "psitools.spellpiece.operator_greater_than": "Operator: Greater Than",
+  "psitools.spellpiece.operator_greater_than.desc": "A > B. 0 if true, 1 otherwise.",
+  "psitools.spellpiece.operator_or": "Operator: Or",
+  "psitools.spellpiece.operator_or.desc": "A || B.",
+  "psitools.spellpiece.operator_and": "Operator: And",
+  "psitools.spellpiece.operator_and.desc": "A && B.",
+  "psitools.spellpiece.operator_direction": "Operator: Direction",
+  "psitools.spellpiece.operator_direction.desc": "Gets the direction vector relative to the player's facing direction. 0 = Left of the player, 1 = Right.",
+
+  "_comment": "- Tricks",
+
+  "psitools.spellpiece.trick_recall": "Trick: Recall",
+  "psitools.spellpiece.trick_recall.desc": "Teleports the target to the given position.",
+  "psitools.spellpiece.trick_void_block": "Trick: Void Block",
+  "psitools.spellpiece.trick_void_block.desc": "Breaks block at given position and voids drops.",
+  "psitools.spellpiece.trick_cast": "Trick: Cast",
+  "psitools.spellpiece.trick_cast.desc": "Casts another spell in the given slot at ~80% of the spell's original psi cost.",
+  "psitools.spellpiece.trick_capture": "Trick: Capture",
+  "psitools.spellpiece.trick_capture.desc": "Throws a ball of psi energy that captures the target entity.",
+  "psitools.spellpiece.trick_capture_absorb": "Trick: Absorb Capture",
+  "psitools.spellpiece.trick_capture_absorb.desc": "Absorb the health of the entity in a psi core.",
+  "psitools.spellpiece.trick_kill_capture": "Trick: Kill Capture",
+  "psitools.spellpiece.trick_kill_capture.desc": "Kills the entity in a core.",
+  "psitools.spellpiece.trick_release": "Trick: Release",
+  "psitools.spellpiece.trick_release.desc": "Releases any entities that are stored in psi cores."
+
+}

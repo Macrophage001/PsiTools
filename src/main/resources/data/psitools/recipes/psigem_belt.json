@@ -1,0 +1,24 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "isi",
+    "s s",
+    " p "
+  ],
+  "key": {
+    "p": {
+      "type": "forge:ore_dict",
+      "ore": "gemPsi"
+    },
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotPsi"
+    },
+    "s": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "psitools:psigem_belt"
+  }
+}
