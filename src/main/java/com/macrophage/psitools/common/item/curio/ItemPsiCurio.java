@@ -45,7 +45,7 @@ public class ItemPsiCurio extends Item implements ICurio, IPsimetalTool, IPsiCus
         ItemStack bullet = sockets.getSelectedBullet();
         ItemStack cad = PsiAPI.getPlayerCAD((PlayerEntity) livingEntity);
 
-        IPsiCustomCast.cast(livingEntity.world, (PlayerEntity) livingEntity, PlayerDataHandler.get((PlayerEntity) livingEntity), bullet, cad, 0, 10, 0.05F, costModifier(), null);
+        IPsiCustomCast.cast(livingEntity.world, (PlayerEntity) livingEntity, PlayerDataHandler.get((PlayerEntity) livingEntity), bullet, cad, 0, 0, 0.05F, costModifier(), null);
     }
 
     @Override

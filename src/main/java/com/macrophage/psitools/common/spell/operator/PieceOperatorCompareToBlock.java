@@ -47,14 +47,4 @@ public class PieceOperatorCompareToBlock extends PieceOperator {
     public Class<?> getEvaluationType() {
         return Double.class;
     }
-
-    @Override
-    public String getUnlocalizedName() {
-        return "psitools.spellpiece." + this.registryKey;
-    }
-
-    @Override
-    public String getUnlocalizedDesc() {
-        return "psitools.spellpiece." + this.registryKey + ".desc";
-    }
 }

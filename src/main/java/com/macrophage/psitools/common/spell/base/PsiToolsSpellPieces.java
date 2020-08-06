@@ -1,6 +1,8 @@
 package com.macrophage.psitools.common.spell.base;
 
 import com.macrophage.psitools.common.spell.operator.*;
+import com.macrophage.psitools.common.spell.selector.block.PieceSelectorNearbyBlock;
+import com.macrophage.psitools.common.spell.selector.block.PieceSelectorNearbyCommonOre;
 import com.macrophage.psitools.common.spell.trick.*;
 import com.macrophage.psitools.util.LibSpellPieceNames;
 import net.minecraft.util.ResourceLocation;
@@ -16,17 +18,20 @@ public final class PsiToolsSpellPieces {
     public static ModSpellPieces.PieceContainer operatorGreaterThan;
     public static ModSpellPieces.PieceContainer operatorOr;
     public static ModSpellPieces.PieceContainer operatorAnd;
-    public static ModSpellPieces.PieceContainer operatorStoredPsi;
+    public static ModSpellPieces.PieceContainer operatorAvailablePsi;
     public static ModSpellPieces.PieceContainer operatorDirection;
+    public static ModSpellPieces.PieceContainer operatorCompareToList;
+    public static ModSpellPieces.PieceContainer operatorRandomBlock;
+    public static ModSpellPieces.PieceContainer operatorBlockPosition;
+
+    public static ModSpellPieces.PieceContainer selectorNearbyCommonOre;
 
     public static ModSpellPieces.PieceContainer trickVoidBlock;
     public static ModSpellPieces.PieceContainer trickRecall;
     public static ModSpellPieces.PieceContainer trickCast;
     public static ModSpellPieces.PieceContainer trickCapture;
-    public static ModSpellPieces.PieceContainer trickCaptureBlock;
     public static ModSpellPieces.PieceContainer trickRelease;
 
-    public static ModSpellPieces.PieceContainer trickAbsorbCapture;
     public static ModSpellPieces.PieceContainer trickKillCapture;
 
     public PsiToolsSpellPieces() {
@@ -39,8 +44,13 @@ public final class PsiToolsSpellPieces {
         operatorGreaterThan = register(PieceOperatorGreaterThan.class, LibSpellPieceNames.OPERATOR_GREATER_THAN, "flow_control");
         operatorOr = register(PieceOperatorOr.class, LibSpellPieceNames.OPERATOR_OR, "flow_control");
         operatorAnd = register(PieceOperatorAnd.class, LibSpellPieceNames.OPERATOR_AND, "flow_control");
-        operatorStoredPsi = register(PieceOperatorPsiStored.class, LibSpellPieceNames.OPERATOR_PSI_STORED, "flow_control");
+        operatorAvailablePsi = register(PieceOperatorAvailablePsi.class, LibSpellPieceNames.OPERATOR_AVAILABLE_PSI, "flow_control");
         operatorDirection = register(PieceOperatorFacingVector.class, LibSpellPieceNames.OPERATOR_DIRECTION, "flow_control");
+        operatorCompareToList = register(PieceOperatorCompareToList.class, LibSpellPieceNames.OPERATOR_COMPARE_TO_LIST, "flow_control");
+        operatorRandomBlock = register(PieceOperatorRandomBlock.class, LibSpellPieceNames.OPERATOR_RANDOM_BLOCK, "block_works");
+        operatorBlockPosition = register(PieceOperatorBlockPosition.class, LibSpellPieceNames.OPERATOR_BLOCK_POSITION, "block_works");
+
+        selectorNearbyCommonOre = register(PieceSelectorNearbyCommonOre.class, LibSpellPieceNames.SELECTOR_NEARBY_COMMON_ORE, "block_works");
 
         trickVoidBlock = register(PieceTrickVoidBlock.class, LibSpellPieceNames.TRICK_VOID_BLOCK, "block_works");
         trickRecall = register(PieceTrickRecall.class, LibSpellPieceNames.TRICK_RECALL, "movement");
@@ -49,8 +59,6 @@ public final class PsiToolsSpellPieces {
         trickCapture = register(PieceTrickCapture.class, LibSpellPieceNames.TRICK_CAPTURE, "movement");
         trickRelease = register(PieceTrickRelease.class, LibSpellPieceNames.TRICK_RELEASE, "movement");
         trickKillCapture = register(PieceTrickKillCapture.class, LibSpellPieceNames.TRICK_KILL_CAPTURE, "movement");
-
-        //trickAbsorbCapture = register(PieceTrickAbsorbCapture.class, LibSpellPieceNames.TRICK_ABSORB_CAPTURE, "movement");
     }
 
     public static ModSpellPieces.PieceContainer register(Class<? extends SpellPiece> clazz, String name, String group) {

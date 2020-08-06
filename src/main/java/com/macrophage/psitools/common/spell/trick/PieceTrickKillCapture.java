@@ -43,7 +43,7 @@ public class PieceTrickKillCapture extends PieceTrick {
         if (psiCore != null && !psiCore.isEmpty() && psiCore.hasTag()) {
             livingEntity = (LivingEntity) EntityType.loadEntityUnchecked(psiCore.getTag().getCompound("entity_data"), context.caster.world).get();
             livingEntity.setPosition(context.caster.getPosX(), context.caster.getPosY() + 1.D, context.caster.getPosZ());
-            livingEntity.onKillCommand();
+            livingEntity.attackEntityFrom(DamageSource.causePlayerDamage(context.caster), Float.MAX_VALUE);
         }
 
         return super.execute(context);

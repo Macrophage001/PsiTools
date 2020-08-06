@@ -7,8 +7,14 @@ public class LibSpellPieceNames {
     public static final String OPERATOR_GREATER_THAN = "operator_greater_than";
     public static final String OPERATOR_OR = "operator_or";
     public static final String OPERATOR_AND = "operator_and";
-    public static final String OPERATOR_PSI_STORED = "operator_psi_stored";
+    public static final String OPERATOR_AVAILABLE_PSI = "operator_available_psi";
     public static final String OPERATOR_DIRECTION = "operator_direction";
+    public static final String OPERATOR_COMPARE_TO_LIST =  "operator_compare_to_list";
+    public static final String OPERATOR_RANDOM_BLOCK =  "operator_random_block";
+    public static final String OPERATOR_BLOCK_POSITION =  "operator_block_position";
+
+    public static final String SELECTOR_NEARBY_COMMON_ORE = "selector_nearby_common_ore";
+    public static final String SELECTOR_NEARBY_RARE_ORE = "selector_nearby_rare_ore";
 
     public static final String TRICK_VOID_BLOCK = "trick_void_block";
     public static final String TRICK_RECALL = "trick_recall";

@@ -1,6 +1,9 @@
 {
   "itemGroup.psitools": "PsiTools",
 
+  "psi.datatype.block_list_wrapper": "Block List",
+  "psi.datatype.block_wrapper": "Block",
+
   "item.psitools.bauble_controller": "Bauble Controller",
   "item.psitools.psigem_amulet": "Psigem Amulet",
   "item.psitools.psigem_belt": "Psigem Belt",
@@ -9,19 +12,32 @@
   "item.psitools.psi_core": "Psi Core",
 
   "psitools.spellpiece.operator_compare_to_block": "Operator: Compare To Block",
-  "psitools.spellpiece.operator_compare_to_block.desc": "Compares block at target position to block in inventory.",
+  "psitools.spellpiece.operator_compare_to_block.desc": "Compares block at target position to block in inventory. 1 if true, 0 otherwise",
   "psitools.spellpiece.operator_equal_to": "Operator: Equals",
-  "psitools.spellpiece.operator_equal_to.desc": "Compares two numbers. Returns 0 if both are equal, 1 otherwise.",
+  "psitools.spellpiece.operator_equal_to.desc": "Compares two numbers. Returns 1 if both are equal, 0 otherwise.",
   "psitools.spellpiece.operator_less_than": "Operator: Less Than",
-  "psitools.spellpiece.operator_less_than.desc": "A < B. 0 if true, 1 otherwise.",
+  "psitools.spellpiece.operator_less_than.desc": "A < B. 1 if true, 0 otherwise.",
   "psitools.spellpiece.operator_greater_than": "Operator: Greater Than",
-  "psitools.spellpiece.operator_greater_than.desc": "A > B. 0 if true, 1 otherwise.",
+  "psitools.spellpiece.operator_greater_than.desc": "A > B. 1 if true, 0 otherwise.",
   "psitools.spellpiece.operator_or": "Operator: Or",
   "psitools.spellpiece.operator_or.desc": "A || B.",
   "psitools.spellpiece.operator_and": "Operator: And",
   "psitools.spellpiece.operator_and.desc": "A && B.",
   "psitools.spellpiece.operator_direction": "Operator: Direction",
   "psitools.spellpiece.operator_direction.desc": "Gets the direction vector relative to the player's facing direction. 0 = Left of the player, 1 = Right.",
+  "psitools.spellpiece.operator_available_psi": "Operator: Available Psi",
+  "psitools.spellpiece.operator_available_psi.desc": "Returns how much psi the player has left.",
+  "psitools.spellpiece.operator_add_to_block_list": "Operator: Add to List (Block)",
+  "psitools.spellpiece.operator_add_to_block_list.desc": "Stores the target block in a list",
+  "psitools.spellpiece.operator_compare_to_list": "Operator: Compare To List",
+  "psitools.spellpiece.operator_compare_to_list.desc": "Compares target entity to list, 1 if match is found, 0 otherwise",
+  "psitools.spellpiece.operator_random_block": "Operator: Random Block",
+  "psitools.spellpiece.operator_random_block.desc": "Gets a random block from a list",
+  "psitools.spellpiece.operator_block_position": "Operator: Block Position",
+  "psitools.spellpiece.operator_block_position.desc": "Retrieves a block position from a block",
+
+  "psitools.spellpiece.selector_nearby_common_ore": "Selector: Nearby Common Ores",
+  "psitools.spellpiece.selector_nearby_common_ore.desc": "Selects common ores in a given position",
 
   "_comment": "- Tricks",
 
