@@ -2,11 +2,15 @@ package com.macrophage.psitools.common.spell.trick;
 
 import com.macrophage.psitools.common.init.ModItems;
 import com.macrophage.psitools.common.item.ItemPsiCore;
+import com.macrophage.psitools.common.item.ItemStabilizedPsiCore;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.PotionItem;
+import net.minecraft.util.text.StringTextComponent;
 import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.param.ParamEntity;
 import vazkii.psi.api.spell.piece.PieceTrick;
@@ -44,11 +48,32 @@ public class PieceTrickCapture extends PieceTrick {
             throw new SpellRuntimeException("Entity cannot be contained!");
         }
 
-        ItemStack psiCore = new ItemStack(ModItems.psi_core.get(), 1);
-        ((ItemPsiCore) psiCore.getItem()).setCapturedEntity(entityTarget, psiCore);
-        ItemEntity psiCoreEntityItem = new ItemEntity(context.caster.world, entityTarget.getPosition().getX(), entityTarget.getPosition().getY(), entityTarget.getPosition().getZ(), psiCore);
-        entityTarget.remove();
-        context.caster.world.addEntity(psiCoreEntityItem);
-        return null;
+        ItemStack stabilizedPsiCore = null;
+        IInventory playerInventory = context.caster.inventory;
+        for (int i = 0; i < playerInventory.getSizeInventory(); i++) {
+            if (playerInventory.getStackInSlot(i).getItem() instanceof ItemStabilizedPsiCore) {
+                stabilizedPsiCore = playerInventory.getStackInSlot(i);
+                break;
+            }
+        }
+
+        if (stabilizedPsiCore != null &&
+                (entityTarget.getDisplayName().getFormattedText().compareTo(stabilizedPsiCore.getTag().getString("entity_name")) == 0) &&
+                    stabilizedPsiCore.getTag().getLong("entity_count") < ItemStabilizedPsiCore.ENTITY_MAX)
+        {
+            ((ItemStabilizedPsiCore) stabilizedPsiCore.getItem()).add(stabilizedPsiCore, 1);
+            entityTarget.remove();
+        }
+        else
+        {
+            ItemStack psiCore = new ItemStack(ModItems.psi_core.get(), 1);
+            ((ItemPsiCore) psiCore.getItem()).setCapturedEntity(entityTarget, psiCore);
+            psiCore.setDisplayName(new StringTextComponent("Psi Core (" + entityTarget.getDisplayName().getFormattedText() + ")"));
+
+            ItemEntity psiCoreEntityItem = new ItemEntity(context.caster.world, entityTarget.getPosition().getX(), entityTarget.getPosition().getY(), entityTarget.getPosition().getZ(), psiCore);
+            context.caster.world.addEntity(psiCoreEntityItem);
+            entityTarget.remove();
+        }
+        return super.execute(context);
     }
 }

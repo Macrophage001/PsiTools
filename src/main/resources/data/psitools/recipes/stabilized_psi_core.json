@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "eni",
+    " s ",
+    "ide"
+  ],
+  "key": {
+    "e": {
+      "tag": "forge:ingots/ebony_psimetal"
+    },
+    "i": {
+      "tag": "forge:ingots/ivory_psimetal"
+    },
+    "n": {
+      "item": "minecraft:nether_star"
+    },
+    "d": {
+      "item": "minecraft:ender_eye"
+    },
+    "s": {
+      "item": "psitools:psi_core"
+    }
+  },
+  "result": {
+    "item": "psitools:stabilized_psi_core"
+  }
+}

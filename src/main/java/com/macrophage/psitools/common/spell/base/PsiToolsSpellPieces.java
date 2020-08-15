@@ -30,9 +30,11 @@ public final class PsiToolsSpellPieces {
     public static ModSpellPieces.PieceContainer trickRecall;
     public static ModSpellPieces.PieceContainer trickCast;
     public static ModSpellPieces.PieceContainer trickCapture;
+    public static ModSpellPieces.PieceContainer trickCaptureBlock;
     public static ModSpellPieces.PieceContainer trickRelease;
 
     public static ModSpellPieces.PieceContainer trickKillCapture;
+    public static ModSpellPieces.PieceContainer trickUsePotion;
 
     public PsiToolsSpellPieces() {
     }
@@ -57,8 +59,12 @@ public final class PsiToolsSpellPieces {
         trickCast = register(PieceTrickCast.class, LibSpellPieceNames.TRICK_CAST, "flow_control");
 
         trickCapture = register(PieceTrickCapture.class, LibSpellPieceNames.TRICK_CAPTURE, "movement");
+        trickCaptureBlock = register(PieceTrickBlockCapture.class, LibSpellPieceNames.TRICK_CAPTURE_BLOCK, "movement");
+
         trickRelease = register(PieceTrickRelease.class, LibSpellPieceNames.TRICK_RELEASE, "movement");
         trickKillCapture = register(PieceTrickKillCapture.class, LibSpellPieceNames.TRICK_KILL_CAPTURE, "movement");
+
+        trickUsePotion = register(PieceTrickUsePotion.class, LibSpellPieceNames.TRICK_USE_POTION, "flow_control");
     }
 
     public static ModSpellPieces.PieceContainer register(Class<? extends SpellPiece> clazz, String name, String group) {

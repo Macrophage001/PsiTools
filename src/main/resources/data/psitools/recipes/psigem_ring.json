@@ -1,5 +1,5 @@
 {
-  "type": "forge:ore_shaped",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     " p ",
     "i i",
@@ -7,11 +7,10 @@
   ],
   "key": {
     "p": {
-      "type": "forge:ore_dict",
-      "ore": "gemPsi"
+      "tag": "forge:gems/psigem"
     },
     "i": {
-      "item": "minecraft:iron_ingot"
+      "tag": "forge:ingots/iron"
     }
   },
   "result": {

@@ -1,5 +1,5 @@
 {
-  "type": "forge:ore_shaped",
+  "type": "minecraft:crafting_shaped",
   "pattern": [
     "isi",
     "s s",
@@ -7,12 +7,10 @@
   ],
   "key": {
     "p": {
-      "type": "forge:ore_dict",
-      "ore": "gemPsi"
+      "tag": "forge:gems/psigem"
     },
     "i": {
-      "type": "forge:ore_dict",
-      "ore": "ingotPsi"
+      "tag": "forge:ingots/psimetal"
     },
     "s": {
       "item": "minecraft:leather"

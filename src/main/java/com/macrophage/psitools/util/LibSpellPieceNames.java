@@ -26,6 +26,8 @@ public class LibSpellPieceNames {
     public static final String CONSTANT_STRING = "constant_string";
     public static final String TRICK_ABSORB_CAPTURE = "trick_capture_absorb";
     public static final String TRICK_KILL_CAPTURE = "trick_kill_capture";
+    public static final String TRICK_USE_POTION = "trick_use_potion";
+    public static final String TRICK_THROW_POTION = "trick_throw_potion";
 
     public LibSpellPieceNames() {}
 }

@@ -1,5 +1,7 @@
 package com.macrophage.psitools;
 
+import com.macrophage.psitools.common.handler.BlockEvents;
+import com.macrophage.psitools.common.handler.CraftingEvents;
 import com.macrophage.psitools.common.init.ModItems;
 import com.macrophage.psitools.common.item.curio.ItemPsiCurio;
 import com.macrophage.psitools.common.spell.base.PsiToolsSpellPieces;
@@ -44,6 +46,8 @@ public class PsiTools
 
         ModItems.init();
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new CraftingEvents());
+        MinecraftForge.EVENT_BUS.register(new BlockEvents());
     }
 
     private void setup(final FMLCommonSetupEvent event)

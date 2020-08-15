@@ -131,6 +131,6 @@ public interface IPsiCustomCast {
     }
 
     default Double costModifier() {
-        return 0.833D;
+        return 0.75D;
     }
 }

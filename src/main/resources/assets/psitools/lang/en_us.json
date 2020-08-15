@@ -10,6 +10,8 @@
   "item.psitools.psigem_ring": "Psigem Ring",
   "item.psitools.psimetal_plate": "Psimetal Plate",
   "item.psitools.psi_core": "Psi Core",
+  "item.psitools.block_psi_core": "Psi Core (Block)",
+  "item.psitools.stabilized_psi_core": "Stabilized Psi Core",
 
   "psitools.spellpiece.operator_compare_to_block": "Operator: Compare To Block",
   "psitools.spellpiece.operator_compare_to_block.desc": "Compares block at target position to block in inventory. 1 if true, 0 otherwise",
@@ -28,16 +30,16 @@
   "psitools.spellpiece.operator_available_psi": "Operator: Available Psi",
   "psitools.spellpiece.operator_available_psi.desc": "Returns how much psi the player has left.",
   "psitools.spellpiece.operator_add_to_block_list": "Operator: Add to List (Block)",
-  "psitools.spellpiece.operator_add_to_block_list.desc": "Stores the target block in a list",
+  "psitools.spellpiece.operator_add_to_block_list.desc": "Stores the target block in a list.",
   "psitools.spellpiece.operator_compare_to_list": "Operator: Compare To List",
-  "psitools.spellpiece.operator_compare_to_list.desc": "Compares target entity to list, 1 if match is found, 0 otherwise",
+  "psitools.spellpiece.operator_compare_to_list.desc": "Compares target entity to list, 1 if match is found, 0 otherwise.",
   "psitools.spellpiece.operator_random_block": "Operator: Random Block",
-  "psitools.spellpiece.operator_random_block.desc": "Gets a random block from a list",
+  "psitools.spellpiece.operator_random_block.desc": "Gets a random block from a list.",
   "psitools.spellpiece.operator_block_position": "Operator: Block Position",
-  "psitools.spellpiece.operator_block_position.desc": "Retrieves a block position from a block",
+  "psitools.spellpiece.operator_block_position.desc": "Retrieves a block position from a block.",
 
   "psitools.spellpiece.selector_nearby_common_ore": "Selector: Nearby Common Ores",
-  "psitools.spellpiece.selector_nearby_common_ore.desc": "Selects common ores in a given position",
+  "psitools.spellpiece.selector_nearby_common_ore.desc": "Selects common ores in a given position.",
 
   "_comment": "- Tricks",
 
@@ -49,11 +51,14 @@
   "psitools.spellpiece.trick_cast.desc": "Casts another spell in the given slot at ~80% of the spell's original psi cost.",
   "psitools.spellpiece.trick_capture": "Trick: Capture",
   "psitools.spellpiece.trick_capture.desc": "Throws a ball of psi energy that captures the target entity.",
+  "psitools.spellpiece.trick_capture_block": "Trick: Capture Block",
+  "psitools.spellpiece.trick_capture_block.desc": "Captures the block in a psi core at the given position.",
   "psitools.spellpiece.trick_capture_absorb": "Trick: Absorb Capture",
   "psitools.spellpiece.trick_capture_absorb.desc": "Absorb the health of the entity in a psi core.",
   "psitools.spellpiece.trick_kill_capture": "Trick: Kill Capture",
   "psitools.spellpiece.trick_kill_capture.desc": "Kills the entity in a core.",
   "psitools.spellpiece.trick_release": "Trick: Release",
-  "psitools.spellpiece.trick_release.desc": "Releases any entities that are stored in psi cores."
-
+  "psitools.spellpiece.trick_release.desc": "Releases any entities that are stored in psi cores.",
+  "psitools.spellpiece.trick_use_potion": "Trick: Use Potion",
+  "psitools.spellpiece.trick_use_potion.desc": "Uses the potion in target slot on list of entities."
 }

@@ -1,6 +1,7 @@
 package com.macrophage.psitools.common.item;
 
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -30,19 +31,12 @@ public class ItemPsiCore extends ItemMod {
         }
     }
 
-    @Override
-    public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        super.addInformation(stack, worldIn, tooltip, flagIn);
-
-        if (stack.hasTag()) {
-            if (stack.getTag().get("entity_data") != null) {
-                tooltip.add(new StringTextComponent("Name: " + stack.getTag().getString("entity_name")));
-                tooltip.add(new StringTextComponent("Health: " + stack.getTag().getFloat("entity_health")));
-            } else if (stack.getTag().get("block_data") != null) {
-                tooltip.add(new StringTextComponent("Name: " + stack.getTag().getString("block_name")));
-            }
+    public void setCapturedEntity(ItemStack psiCore, ItemStack stack) {
+        if (!stack.hasTag())
+        {
+            stack.setTag(psiCore.getTag());
         }
     }
 
-    public LivingEntity getCapturedEntity() { return capturedEntity; }
+    public LivingEntity getCapturedEntity(ItemStack stack, World world) { return (LivingEntity) EntityType.loadEntityUnchecked(stack.getTag().getCompound("entity_data"), world).get(); }
 }

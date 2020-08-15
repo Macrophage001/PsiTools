@@ -25,7 +25,7 @@ public class PieceTrickCast extends PieceTrick implements IPsiCustomCast {
     public void addToMetadata(SpellMetadata meta) throws SpellCompilationException {
         super.addToMetadata(meta);
         meta.addStat(EnumSpellStat.POTENCY, 175);
-        meta.addStat(EnumSpellStat.COST, 500);
+        meta.addStat(EnumSpellStat.COST, 0);
     }
 
     @Override
@@ -37,8 +37,7 @@ public class PieceTrickCast extends PieceTrick implements IPsiCustomCast {
         ISocketable sockets = getSocketable(cad);
         ItemStack bullet = sockets.getBulletInSocket(slot);
 
-        IPsiCustomCast.cast(context.caster.world, context.caster, PlayerDataHandler.get(context.caster), bullet, cad, 40, 0, 0, costModifier(), null);
-
+        IPsiCustomCast.cast(context.caster.world, context.caster, PlayerDataHandler.get(context.caster), bullet, cad, 0, 0, 0, costModifier(), null);
         return super.execute(context);
     }
 
