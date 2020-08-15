@@ -42,13 +42,13 @@ description='''
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.psipherals]]
+[[dependencies.psitools]]
     modId="patchouli"
     mandatory=true
     versionRange="[1.15.2-1.2-27,)"
     side="BOTH"
 
-[[dependencies.psipherals]]
+[[dependencies.psitools]]
     modId="psi"
     mandatory=true
     versionRange="[r1.2-82,)"
