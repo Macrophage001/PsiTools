@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "p p",
+    "ppp"
+  ],
+  "key": {
+    "p": {
+      "item": "psitools:psimetal_plate"
+    }
+  },
+  "result": {
+    "item": "psitools:psimetal_casing",
+    "count": 1
+  }
+}

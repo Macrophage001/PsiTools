@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "isi",
+    "s s",
+    " p "
+  ],
+  "key": {
+    "p": {
+      "tag": "forge:gems/psigem"
+    },
+    "i": {
+      "tag": "forge:ingots/psimetal"
+    },
+    "s": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "psitools:psigem_belt"
+  }
+}

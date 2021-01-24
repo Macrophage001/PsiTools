@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " p ",
+    "i i",
+    " i "
+  ],
+  "key": {
+    "p": {
+      "tag": "forge:gems/psigem"
+    },
+    "i": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "psitools:psigem_ring"
+  }
+}

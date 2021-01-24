@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "iii",
+    "i i",
+    " p "
+  ],
+  "key": {
+    "p": {
+      "type": "forge:ore_dict",
+      "ore": "gemPsi"
+    },
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotIron"
+    }
+  },
+  "result": {
+    "item": "psitools:psigem_band"
+  }
+}

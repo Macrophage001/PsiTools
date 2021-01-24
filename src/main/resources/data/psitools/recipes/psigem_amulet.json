@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " s ",
+    "s s",
+    " p "
+  ],
+  "key": {
+    "p": {
+      "tag": "forge:gems/psigem"
+    },
+    "s": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "item": "psitools:psigem_amulet"
+  }
+}

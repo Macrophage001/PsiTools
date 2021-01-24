@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R",
+    "G",
+    "P"
+  ],
+  "key": {
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "P": {
+      "tag": "forge:gems/psigem"
+    }
+  },
+  "result": {
+    "item": "psitools:bauble_controller"
+  }
+}
