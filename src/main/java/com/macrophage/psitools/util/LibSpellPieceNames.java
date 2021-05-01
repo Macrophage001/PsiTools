@@ -29,5 +29,8 @@ public class LibSpellPieceNames {
     public static final String TRICK_USE_POTION = "trick_use_potion";
     public static final String TRICK_THROW_POTION = "trick_throw_potion";
 
+    //new
+    public static final String TRICK_FROM_BLOCK_POSITION = "trick_block_from_pos";
+
     public LibSpellPieceNames() {}
 }

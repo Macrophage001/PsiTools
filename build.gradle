@@ -37,11 +37,9 @@ minecraft {
         client {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+            properties 'mixin.env.disableRefMap': 'true'
 
             mods {
                 PsiTools {
@@ -55,9 +53,8 @@ minecraft {
 
             // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+            properties 'mixin.env.disableRefMap': 'true'
 
             mods {
                 PsiTools {
@@ -69,11 +66,9 @@ minecraft {
         data {
             workingDirectory project.file('run')
 
-            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
+            properties 'mixin.env.disableRefMap': 'true'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
             args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
@@ -94,10 +89,16 @@ repositories {
     maven {
         url = "https://maven.blamejared.com/"
     }
+
+    maven {
+        url "https://www.cursemaven.com"
+    }
+
     maven {
         name = "curios"
         url  = "https://maven.theillusivec4.top/"
     }
+
     maven {
         // for JEI
         name "promwml16"
@@ -111,35 +112,13 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.16.5-36.0.1'
 
-    /*compile fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48:api")
-    compile fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48")
+    compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-51-SNAPSHOT:api")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-51-SNAPSHOT")
 
-    compile fg.deobf("vazkii.psi:Psi:1.16-89.320")
-    compile fg.deobf("vazkii.psi:Psi:1.16-89.320:api")
+    compile fg.deobf("curse.maven:psi-241665:3085941")
 
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.4-4.0.3.5:api")
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.4-4.0.3.5")*/
-
-    compile fileTree(dir: 'libs', include: '*.jar')
-
-
-    // You may put jars on which you depend on in ./libs or you may define them like so..
-    // compile "some.group:artifact:version:classifier"
-    // compile "some.group:artifact:version"
-
-    // Real examples
-    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    // provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // These dependencies get remapped to your current MCP mappings
-    // deobf 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // For more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.4-4.0.3.5")
 
 }
 

@@ -28,7 +28,6 @@ import top.theillusivec4.curios.api.CuriosApi;
 import top.theillusivec4.curios.api.CuriosCapability;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.type.capability.ICurio;
-import top.theillusivec4.curios.api.type.util.ICuriosHelper;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

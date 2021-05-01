@@ -1,9 +1,9 @@
 package com.macrophage.psitools.common.spell.base;
 
 import com.macrophage.psitools.common.spell.operator.*;
-import com.macrophage.psitools.common.spell.selector.block.PieceSelectorNearbyBlock;
 import com.macrophage.psitools.common.spell.selector.block.PieceSelectorNearbyCommonOre;
 import com.macrophage.psitools.common.spell.trick.*;
+import com.macrophage.psitools.common.spell.trick.blocks.FirstTrickGetBlockFromPos;
 import com.macrophage.psitools.util.LibSpellPieceNames;
 import net.minecraft.util.ResourceLocation;
 import vazkii.psi.api.PsiAPI;
@@ -36,6 +36,9 @@ public final class PsiToolsSpellPieces {
     public static ModSpellPieces.PieceContainer trickKillCapture;
     public static ModSpellPieces.PieceContainer trickUsePotion;
 
+    //Block
+    public static ModSpellPieces.PieceContainer trickblockfrompos;
+
     public PsiToolsSpellPieces() {
     }
 
@@ -65,6 +68,8 @@ public final class PsiToolsSpellPieces {
         trickKillCapture = register(PieceTrickKillCapture.class, LibSpellPieceNames.TRICK_KILL_CAPTURE, "movement");
 
         trickUsePotion = register(PieceTrickUsePotion.class, LibSpellPieceNames.TRICK_USE_POTION, "flow_control");
+
+        trickblockfrompos = register(FirstTrickGetBlockFromPos.class,LibSpellPieceNames.TRICK_FROM_BLOCK_POSITION, "block_works");
     }
 
     public static ModSpellPieces.PieceContainer register(Class<? extends SpellPiece> clazz, String name, String group) {
