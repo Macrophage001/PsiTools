@@ -24,11 +24,10 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import top.theillusivec4.curios.api.CuriosAPI;
-import top.theillusivec4.curios.api.capability.CuriosCapability;
-import top.theillusivec4.curios.api.capability.ICurio;
-import top.theillusivec4.curios.api.imc.CurioIMCMessage;
-import vazkii.psi.common.core.PsiCreativeTab;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.CuriosCapability;
+import top.theillusivec4.curios.api.SlotTypeMessage;
+import top.theillusivec4.curios.api.type.capability.ICurio;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -62,9 +61,9 @@ public class PsiTools
 
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
-        InterModComms.sendTo(CuriosAPI.MODID, CuriosAPI.IMC.REGISTER_TYPE, () -> new CurioIMCMessage("ring").setSize(2));
-        InterModComms.sendTo(CuriosAPI.MODID, CuriosAPI.IMC.REGISTER_TYPE, () -> new CurioIMCMessage("belt"));
-        InterModComms.sendTo(CuriosAPI.MODID, CuriosAPI.IMC.REGISTER_TYPE, () -> new CurioIMCMessage("necklace"));
+        InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> new SlotTypeMessage.Builder("ring").size(2).build());
+        InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> new SlotTypeMessage.Builder("belt").build());
+        InterModComms.sendTo(CuriosApi.MODID, SlotTypeMessage.REGISTER_TYPE, () -> new SlotTypeMessage.Builder("necklace").build());
     }
 
     @SubscribeEvent
@@ -74,9 +73,9 @@ public class PsiTools
         if (!(stack.getItem() instanceof ItemPsiCurio)) {
             return;
         }
-        ItemPsiCurio psiCurio = new ItemPsiCurio(stack);
+
         evt.addCapability(CuriosCapability.ID_ITEM, new ICapabilityProvider() {
-            LazyOptional<ICurio> curio = LazyOptional.of(() -> psiCurio);
+            LazyOptional<ICurio> curio = CuriosApi.getCuriosHelper().getCurio(evt.getObject());
 
             @Nonnull
             @Override

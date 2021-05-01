@@ -1,9 +1,7 @@
 package com.macrophage.psitools.common.item.curio;
 
-import com.macrophage.psitools.PsiTools;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 import net.minecraft.util.ActionResult;
@@ -11,9 +9,8 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
-import top.theillusivec4.curios.api.CuriosAPI;
-import top.theillusivec4.curios.api.capability.ICurio;
-import top.theillusivec4.curios.api.capability.ICurioItemHandler;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.ISocketable;
 import vazkii.psi.api.cad.ISocketableController;
@@ -61,12 +58,12 @@ public class ItemBaubleController extends Item implements ISocketableController 
     public ItemStack[] getControlledStacks(PlayerEntity player, ItemStack stack) {
         List<ItemStack> stacks = new ArrayList();
 
-        ICurioItemHandler curioItemHandler = CuriosAPI.getCuriosHandler(player).orElse(null);
+        ICuriosItemHandler curioItemHandler = CuriosApi.getCuriosHelper().getCuriosHandler(player).orElse(null);
         ItemStack[] curios = {
-                curioItemHandler.getStackInSlot("necklace", 0),
-                curioItemHandler.getStackInSlot("ring", 0),
-                curioItemHandler.getStackInSlot("ring", 1),
-                curioItemHandler.getStackInSlot("belt", 0)
+                curioItemHandler.getStacksHandler("necklace").get().getStacks().getStackInSlot(0),
+                curioItemHandler.getStacksHandler("ring").get().getStacks().getStackInSlot(0),
+                curioItemHandler.getStacksHandler("ring").get().getStacks().getStackInSlot(1),
+                curioItemHandler.getStacksHandler("belt").get().getStacks().getStackInSlot(0)
         };
 
         for (ItemStack stack1 : curios)

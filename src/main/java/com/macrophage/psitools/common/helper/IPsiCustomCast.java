@@ -1,8 +1,10 @@
 package com.macrophage.psitools.common.helper;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.text.Color;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -41,9 +43,10 @@ public interface IPsiCustomCast {
                     if (MinecraftForge.EVENT_BUS.post(event)) {
                         String cancelMessage = event.getCancellationMessage();
                         if (cancelMessage != null && !cancelMessage.isEmpty()) {
-                            player.sendMessage((new TranslationTextComponent(cancelMessage, new Object[0])).setStyle((new Style()).setColor(TextFormatting.RED)));
+                            player.sendMessage((new TranslationTextComponent(cancelMessage)
+                                            .setStyle(Style.EMPTY.setColor(Color.fromTextFormatting(TextFormatting.RED)))),
+                                    Minecraft.getInstance().player.getUniqueID());
                         }
-
                         return false;
                     }
 
@@ -100,7 +103,8 @@ public interface IPsiCustomCast {
                 }
 
                 if (!world.isRemote) {
-                    player.sendMessage((new TranslationTextComponent("psimisc.weak_cad", new Object[0])).setStyle((new Style()).setColor(TextFormatting.RED)));
+                    player.sendMessage((new TranslationTextComponent("psimisc.weak_cad", new Object[0]))
+                            .setStyle((Style.EMPTY.setColor(Color.fromTextFormatting(TextFormatting.RED)))), Minecraft.getInstance().player.getUniqueID());
                 }
             }
         }

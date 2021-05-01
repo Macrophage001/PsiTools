@@ -60,7 +60,7 @@ public class PieceTrickCapture extends PieceTrick {
         }
 
         if (stabilizedPsiCore != null &&
-                (entityTarget.getDisplayName().getFormattedText().compareTo(stabilizedPsiCore.getTag().getString("entity_name")) == 0) &&
+                (entityTarget.getDisplayName().getString().compareTo(stabilizedPsiCore.getTag().getString("entity_name")) == 0) &&
                     stabilizedPsiCore.getTag().getLong("entity_count") < ItemStabilizedPsiCore.ENTITY_MAX)
         {
             ((ItemStabilizedPsiCore) stabilizedPsiCore.getItem()).add(stabilizedPsiCore, 1);
@@ -70,7 +70,7 @@ public class PieceTrickCapture extends PieceTrick {
         {
             ItemStack psiCore = new ItemStack(ModItems.psi_core.get(), 1);
             ((ItemPsiCore) psiCore.getItem()).setCapturedEntity( (LivingEntity) entityTarget, psiCore);
-            psiCore.setDisplayName(new StringTextComponent("Psi Core (" + entityTarget.getDisplayName().getFormattedText() + ")"));
+            psiCore.setDisplayName(new StringTextComponent("Psi Core (" + entityTarget.getDisplayName().getString() + ")"));
 
             ItemEntity psiCoreEntityItem = new ItemEntity(context.caster.world, entityTarget.getPosition().getX(), entityTarget.getPosition().getY(), entityTarget.getPosition().getZ(), psiCore);
             context.caster.world.addEntity(psiCoreEntityItem);

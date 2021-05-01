@@ -19,7 +19,7 @@ public class CraftingEvents {
             ItemStack psiCore = craftingMatrix.getStackInSlot(4);
             LivingEntity livingEntity = ((ItemPsiCore) psiCore.getItem()).getCapturedEntity(psiCore, evt.getEntity().world);
             ((ItemStabilizedPsiCore) evt.getCrafting().getItem()).setCapturedEntity(psiCore, evt.getCrafting());
-            evt.getCrafting().setDisplayName(new StringTextComponent("Stabilized Psi Core (" + livingEntity.getDisplayName().getFormattedText() + ")"));
+            evt.getCrafting().setDisplayName(new StringTextComponent("Stabilized Psi Core (" + livingEntity.getDisplayName().getString() + ")"));
         }
     }
 }

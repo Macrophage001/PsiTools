@@ -3,8 +3,9 @@ package com.macrophage.psitools.common.spell.selector.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ITag;
+import net.minecraft.tags.ITagCollection;
 import net.minecraft.tags.Tag;
-import net.minecraft.tags.TagCollection;
 import net.minecraft.util.ResourceLocation;
 import vazkii.psi.api.spell.Spell;
 import vazkii.psi.api.spell.SpellContext;
@@ -19,16 +20,16 @@ public class PieceSelectorNearbyCommonOre extends PieceSelectorNearbyBlock {
 
     public PieceSelectorNearbyCommonOre(Spell spell) {
         super(spell);
-        TagCollection<Block> tags = BlockTags.getCollection();
+        ITagCollection<Block> tags = BlockTags.getCollection();
         ResourceLocation oreCopperTagId = new ResourceLocation("forge", "ores/copper");
         ResourceLocation oreTinTagId = new ResourceLocation("forge", "ores/tin");
         ResourceLocation oreSilverTagId = new ResourceLocation("forge", "ores/silver");
         ResourceLocation oreLeadTagId = new ResourceLocation("forge", "ores/lead");
 
-        Tag<Block> copperTag = tags.get(oreCopperTagId);
-        Tag<Block> tinTag = tags.get(oreTinTagId);
-        Tag<Block> silverTag = tags.get(oreSilverTagId);
-        Tag<Block> leadTag = tags.get(oreLeadTagId);
+        ITag<Block> copperTag = tags.get(oreCopperTagId);
+        ITag<Block> tinTag = tags.get(oreTinTagId);
+        ITag<Block> silverTag = tags.get(oreSilverTagId);
+        ITag<Block> leadTag = tags.get(oreLeadTagId);
 
         COMMON_ORE_LIST.add(Blocks.IRON_ORE);
         COMMON_ORE_LIST.add(Blocks.COAL_ORE);

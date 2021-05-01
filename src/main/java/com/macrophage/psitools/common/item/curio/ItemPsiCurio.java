@@ -1,19 +1,17 @@
 package com.macrophage.psitools.common.item.curio;
 
-import com.macrophage.psitools.PsiTools;
 import com.macrophage.psitools.common.helper.IPsiCustomCast;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import top.theillusivec4.curios.api.capability.ICurio;
+import top.theillusivec4.curios.api.type.capability.ICurio;
 import vazkii.psi.api.PsiAPI;
 import vazkii.psi.api.cad.ISocketable;
 import vazkii.psi.common.core.PsiCreativeTab;
@@ -40,19 +38,13 @@ public class ItemPsiCurio extends Item implements ICurio, IPsimetalTool, IPsiCus
     }
 
     @Override
-    public void onCurioTick(String identifier, int index, LivingEntity livingEntity) {
-        ISocketable sockets = ISocketable.socketable(stack);
-        ItemStack bullet = sockets.getSelectedBullet();
-        ItemStack cad = PsiAPI.getPlayerCAD((PlayerEntity) livingEntity);
+    public void curioTick(String identifier, int index, LivingEntity livingEntity) {
+            ISocketable sockets = ISocketable.socketable(stack);
+            ItemStack bullet = sockets.getSelectedBullet();
+            ItemStack cad = PsiAPI.getPlayerCAD((PlayerEntity) livingEntity);
 
-        IPsiCustomCast.cast(livingEntity.world, (PlayerEntity) livingEntity, PlayerDataHandler.get((PlayerEntity) livingEntity), bullet, cad, 0, 0, 0.05F, costModifier(), null);
-    }
-
-    @Override
-    public void onEquipped(String identifier, LivingEntity livingEntity) {}
-
-    @Override
-    public void onUnequipped(String identifier, LivingEntity livingEntity) {}
+            IPsiCustomCast.cast(livingEntity.world, (PlayerEntity) livingEntity, PlayerDataHandler.get((PlayerEntity) livingEntity), bullet, cad, 0, 0, 0.05F, costModifier(), null);
+        }
 
     @Override
     public boolean canEquip(String identifier, LivingEntity livingEntity) {

@@ -38,7 +38,7 @@ public abstract class PieceSelectorNearbyBlock extends PieceSelector {
 
     @Override
     public Object execute(SpellContext context) throws SpellRuntimeException {
-        Vector3 positionVal = (Vector3)this.getParamValueOrDefault(context, this.position, Vector3.fromVec3d(context.focalPoint.getPositionVector()));
+        Vector3 positionVal = (Vector3)this.getParamValueOrDefault(context, this.position, Vector3.fromVec3d(context.focalPoint.getPositionVec()));
         double radiusVal = ((Number)this.getParamValueOrDefault(context, this.radius, 64.0D)).doubleValue();
         if (!context.isInRadius(positionVal)) {
             throw new SpellRuntimeException("psi.spellerror.outsideradius");

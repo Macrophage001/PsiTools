@@ -2,18 +2,12 @@ package com.macrophage.psitools.common.spell.trick;
 
 import com.macrophage.psitools.common.item.ItemPsiCore;
 import com.macrophage.psitools.common.item.ItemStabilizedPsiCore;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import vazkii.psi.api.spell.*;
 import vazkii.psi.api.spell.piece.PieceTrick;
-
-import java.util.Collection;
 
 public class PieceTrickKillCapture extends PieceTrick {
     SpellParam<Number> lootingLevel;

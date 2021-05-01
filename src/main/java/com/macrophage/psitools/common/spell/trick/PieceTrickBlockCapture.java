@@ -48,7 +48,7 @@ public class PieceTrickBlockCapture extends PieceTrick {
         {
             ((ItemBlockPsiCore) blockPsiCore.getItem()).setCaptured(blockPsiCore, block);
             ((ItemBlockPsiCore) blockPsiCore.getItem()).setActive(blockPsiCore, true);
-            blockPsiCore.setDisplayName(new StringTextComponent("Psi Core (" + block.getNameTextComponent().getFormattedText() + ")"));
+            blockPsiCore.setDisplayName(new StringTextComponent("Psi Core (" + block.getTranslatedName().getString() + ")"));
             ItemEntity blockPsiCoreEntityItem = new ItemEntity(context.caster.world, blockPos.getX(), blockPos.getY(), blockPos.getZ(), blockPsiCore);
             context.caster.world.addEntity(blockPsiCoreEntityItem);
             context.caster.world.setBlockState(blockPos, Blocks.AIR.getDefaultState());

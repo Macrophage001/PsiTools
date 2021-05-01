@@ -21,7 +21,7 @@ public class ItemPsiCore extends ItemMod {
         if (!stack.hasTag()) {
             CompoundNBT nbt = new CompoundNBT();
             Float entity_health = entityLivingBase.getHealth();
-            nbt.putString("entity_name", entityLivingBase.getDisplayName().getFormattedText());
+            nbt.putString("entity_name", entityLivingBase.getDisplayName().getString());
             nbt.putFloat("entity_health", entity_health);
 
             CompoundNBT entity_data = entityLivingBase.serializeNBT();
